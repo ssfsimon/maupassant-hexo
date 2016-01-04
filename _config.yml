@@ -1,6 +1,6 @@
-fancybox: true ## If you want to use fancybox please set the value to true
+fancybox: false ## If you want to use fancybox please set the value to true
 duoshuo: ## Your duoshuo_shortname, e.g. haomwei
-disqus: ## Your disqus_shortname, e.g. haomwei
+disqus: hohotechhk ## Your disqus_shortname, e.g. haomwei
 google_search: true ## Use Google search, true/false
 baidu_search: ## Use Baidu search, true/false
 swiftype: ## Your swiftype_key, e.g. m7b11ZrsT8Me7gzApciT
@@ -18,16 +18,16 @@ menu:
   - page: about
     directory: about/
     icon: icon-about
-  - page: rss
-    directory: atom.xml
-    icon: icon-rss
+  # - page: rss
+  #   directory: atom.xml
+  #   icon: icon-rss
 
 widgets: ## Six widgets in sidebar provided: search, category, tag, recent_posts, rencent_comments and links.
   - search
-  - category
+  # - category
   - tag
   - recent_posts
-  - recent_comments
+  # - recent_comments
   - links
 
 links:

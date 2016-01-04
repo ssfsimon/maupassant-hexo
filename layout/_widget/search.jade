@@ -1,7 +1,7 @@
 if theme.google_search == true
   .widget
     form(action='//www.google.com/search' method='get' accept-charset='utf-8' class='search-form' target='_blank')
-      input(type='text' name='q' maxlength='20' class='search-form-input' placeholder='Search')
+      input(type='text' name='q' maxlength='20' class='search-form-input' placeholder='Search' autocomplete="off")
       input(type='hidden' name='sitesearch' value='#{config.url}')
 if theme.baidu_search == true
   .widget

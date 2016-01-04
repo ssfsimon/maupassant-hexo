@@ -6,10 +6,16 @@
  * @link http://chopstack.com
  */
 
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+$primary-color: #3498db;
+$primary-color-hover : #2980b9;
+
 body {
     background-color: #FFF;
     color: #444;
-    font-family: "TIBch", "Classic Grotesque W01", "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 14px;
@@ -31,10 +37,6 @@ body {
 a, button.submit {
     color: #6E7173;
     text-decoration: none;
-    -webkit-transition: all .1s ease-in;
-    -moz-transition: all .1s ease-in;
-    -o-transition: all .1s ease-in;
-    transition: all .1s ease-in;
 }
 a:hover, a:active {
     color: #444;
@@ -60,7 +62,7 @@ a:focus{
             overflow: hidden;
         }
         #logo {
-            font: bold 38px/1.12 "Times New Roman", Georgia, Times, sans-serif;
+            font: bold 38px/1.12 'Montserrat', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
             color: #555;
             span, &:hover {
                 color: #777;
@@ -69,6 +71,7 @@ a:focus{
         .description {
             margin: .2em 0 0;
             color: #999;
+            font-size: 16px;
         }
     }
     #nav-menu {
@@ -85,7 +88,7 @@ a:focus{
             font-size: 13px;
             border: 1px solid transparent;
             &:hover {
-                border-bottom-color: #444;
+                border-bottom-color: $primary-color-hover;
             }
             &.current{
                 border: 1px solid #ddd;
@@ -124,9 +127,35 @@ a:focus{
         .tagcloud {
             margin-top: 10px;
             a {
-                line-height: 1.5;
-                padding: 5px;
+                background-color: #ccc;
+                color: #fff;
+                padding: 0.3em 0.6em 0.3em 0.6em;
+                vertical-align: 10%;
+                font-size: 0.5em;
+                font-family: "Open Sans", sans-serif;
+                font-weight: 700 !important;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                border-radius: 0.25em;
+                -moz-border-radius: 0.25em;
+                -webkit-border-radius: 0.25em;
+
+                &:hover {
+                    text-decoration: underline;
+                }
               }
+        }
+        .post-list {
+            .post-list-link {
+                font-weight: bold;
+                font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+                color: $primary-color-hover;
+
+                &:hover {
+                    color: $primary-color-hover;
+                    text-decoration: underline;
+                }
+            }
         }
         ul {
             list-style: none;
@@ -149,6 +178,8 @@ a:focus{
             border: 1px solid #bbb;
             border: 1px solid rgba(0,0,0,0.25);
             font-weight: 400;
+            font-family: 'Source Sans Pro';
+            outline: none;
             color: #444;
             font-size: 14px;
             line-height: 16px;
@@ -178,11 +209,16 @@ a:focus{
     padding: 25px 0 15px;
     .post-title {
         margin: 0;
-        color: #555;
+        color: $primary-color;
         text-align: left;
-        font: bold 25px/1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif;
+        font: bold 35px/1.1 'Source Sans Pro', 'Helvetica Neue', Arial, 'Hiragino Sans GB', sans-serif;
+        font-weight: 700;
         a {
-            color: #555;
+            color: $primary-color;
+
+            &:hover {
+                color: $primary-color-hover;
+            }
         }
     }
     .post-meta {
@@ -202,19 +238,21 @@ a:focus{
         text-indent: .15em;
     }
     .disqus-comment-count {
+        display: none;
         padding: 0;
         margin: 12px 0 0;
         color: #999;
         float: right;
-        display: inline;
+        // display: inline;
         text-indent: .15em;
     }
     .post-content {
         clear: left;
-        font-size: 15px;
-        line-height: 1.77;
+        font-size: 16px;
+        line-height: 1.7;
         color: #444;
         padding-top: 20px;
+        font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
         text-align: justify;
         h2 {
             margin: 1.4em 0 1.1em;
@@ -329,15 +367,23 @@ a:focus{
 
 /* for different pages starts*/
 .post-archive {
-    font-size: 15px;
+    font-size: 18px;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
     line-height: 2;
     padding-bottom: .8em;
     h2{
         margin: 0;
-        font: bold 25px / 1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif;
+        font-weight: bold;
     }
     .date {
         padding-right: .7em;
+    }
+    a {
+        font-weight: bold;
+        color: $primary-color;
+    }
+    a:hover, a:active {
+        color: $primary-color-hover;
     }
 }
 
@@ -555,19 +601,16 @@ div {
 /* read more*/
 .readmore a {
     font-size: 13px;
-    color: #999;
+    color: $primary-color;
     margin-top: -10px;
     margin-bottom: -10px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    border: 1px solid #999;
-    border-radius: 7px;
     float: right;
     &:hover {
-            color: #444;
-            border-color: #444;
+        color: $primary-color-hover;
     }
 }
 
@@ -1256,7 +1299,7 @@ figure.highlight {
 }
 
 i {
-    font-family: 'icomoon', "TIBch", "Classic Grotesque W01", "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    font-family: 'icomoon', "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
     speak: none;
     font-style: normal;
     font-weight: normal;
