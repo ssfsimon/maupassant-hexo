@@ -11,6 +11,9 @@
 
 $primary-color: #3498db;
 $primary-color-hover : #2980b9;
+$tag-color-green: #34a753;
+$tag-color-red: #e74c3c;
+$tag-color-yellow: #f1c40f;
 
 body {
     background-color: #FFF;
@@ -112,6 +115,7 @@ a:focus{
     .widget {
         margin-bottom: 30px;
         .widget-title {
+            font-family: "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
             color: #6E7173;
             line-height: 2.7;
             margin-top: 0;
@@ -132,12 +136,13 @@ a:focus{
         .tagcloud {
             margin-top: 10px;
             a {
+                opacity: 0;
                 background-color: #ccc;
                 color: #fff;
                 padding: 0.3em 0.6em 0.3em 0.6em;
                 vertical-align: 10%;
                 font-size: 0.5em;
-                font-family: "Open Sans", sans-serif;
+                font-family: "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
                 font-weight: 700 !important;
                 text-transform: uppercase;
                 letter-spacing: 0.05em;
@@ -147,6 +152,19 @@ a:focus{
 
                 &:hover {
                     text-decoration: underline;
+                }
+
+                &.product {
+                    opacity: 1;
+                    background-color: $tag-color-red;
+                }
+                &.technical {
+                    opacity: 1;
+                    background-color: $tag-color-green;
+                }
+                &.design {
+                    opacity: 1;
+                    background-color: $tag-color-yellow;
                 }
               }
         }
@@ -208,6 +226,7 @@ a:focus{
     font-size: 20px;
     font-weight: normal;
     color: #888;
+    font-family: "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
 }
 
 .post {
@@ -233,6 +252,33 @@ a:focus{
         float: left;
         display: inline;
         text-indent: .15em;
+
+        .tags a {
+            color: #fff;
+            padding: 0.3em 0.6em 0.3em 0.6em;
+            vertical-align: 10%;
+            font-size: 0.8em;
+            font-family: "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
+            font-weight: 700 !important;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-radius: 0.25em;
+            -moz-border-radius: 0.25em;
+            -webkit-border-radius: 0.25em;
+
+            &:before {
+                content: none;
+            }
+            &.product {
+                background-color: $tag-color-red;
+            }
+            &.technical {
+                background-color: $tag-color-green;
+            }
+            &.design {
+                background-color: $tag-color-yellow;
+            }
+        }
     }
     .ds-thread-count {
         padding: 0;
@@ -324,7 +370,7 @@ a:focus{
         }
     }
     .tags {
-        padding-bottom: 1em;
+        padding-bottom: 1.5em;
         a {
             margin-right: .5em;
             &:before {
@@ -361,6 +407,7 @@ a:focus{
 }
 
 #footer {
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
     padding: .8em 0 3.6em;
     margin-top:1em;
     line-height: 1.5;
@@ -384,6 +431,7 @@ a:focus{
         padding-right: .7em;
     }
     a {
+        font-family: "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
         font-weight: bold;
         color: $primary-color;
     }
@@ -606,6 +654,7 @@ div {
 /* read more*/
 .readmore a {
     font-size: 13px;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
     color: $primary-color;
     margin-top: -10px;
     margin-bottom: -10px;

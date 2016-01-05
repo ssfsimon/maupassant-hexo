@@ -51,12 +51,16 @@ html(lang='#{config.language}')
         each item in theme.widgets
           != partial('_widget/' + item + '.jade')
 
-    #footer= '© '
-      a(href=url_for('.'), rel='nofollow')= config.title + '.'
+    #footer
       |  Powered by
       a(rel='nofollow', target='_blank', href='https://hexo.io')  Hexo.
-      a(rel='nofollow', target='_blank', href='https://github.com/tufu9441/maupassant-hexo')  Theme
+      a(rel='nofollow', target='_blank', href='https://github.com/tufu9441/maupassant-hexo')  Original theme
       |  by
       a(rel='nofollow', target='_blank', href='https://github.com/pagecho')  Cho.
 
     include _partial/after_footer
+
+    //- 
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/tag.js"></script>
+

@@ -7,10 +7,14 @@ block content
   .post.post-page
     h1.post-title= page.title
     .post-meta= page.date.format(config.date_format) + " | "
-      if page.categories.length > 0
-        span.categories= __('belongsto')
-          for category in page.categories.toArray()
-            a(href=url_for(category.path))= " " + category.name
+      if page.tags.length > 0
+        span.tags
+          for tag in page.tags.toArray()
+            a(href=url_for(tag.path) 
+              class=(tag.name == '產品' ? 'product' : 
+                     tag.name == '技術' ? 'technical' :
+                     tag.name == '設計' ? 'design' : null))
+              = tag.name
     if theme.duoshuo
       span.ds-thread-count(data-thread-key=page.path)
     if theme.disqus

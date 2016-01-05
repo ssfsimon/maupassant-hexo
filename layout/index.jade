@@ -11,7 +11,15 @@ block content
         include _partial/helpers
         a(href=url_for(post.path))
           +title(post)
-      .post-meta= post.date.format(config.date_format)
+      .post-meta= post.date.format(config.date_format) + " | "
+        if post.tags.length > 0
+          span.tags
+            for tag in post.tags.toArray()
+              a(href=url_for(tag.path) 
+                class=(tag.name == '產品' ? 'product' : 
+                       tag.name == '技術' ? 'technical' :
+                       tag.name == '設計' ? 'design' : null))
+                = tag.name
       if theme.duoshuo
         span.ds-thread-count(data-thread-key=post.path)
       if theme.disqus
