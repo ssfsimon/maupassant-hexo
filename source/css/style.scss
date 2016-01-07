@@ -8,12 +8,14 @@
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700);
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
 
 $primary-color: #3498db;
 $primary-color-hover : #2980b9;
 $tag-color-green: #34a753;
 $tag-color-red: #e74c3c;
 $tag-color-yellow: #f1c40f;
+$code-font: "Menlo", "Source Code Pro";
 
 body {
     background-color: #FFF;
@@ -171,13 +173,20 @@ a:focus{
         .post-list {
             .post-list-link {
                 font-weight: bold;
-                font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+                font-family: 'Source Sans Pro', "Hiragino Sans GB", 'Helvetica Neue', Arial, "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
                 color: $primary-color-hover;
 
                 &:hover {
                     color: $primary-color-hover;
                     text-decoration: underline;
                 }
+            }
+        }
+        a {
+            font-family: "Microsoft YaHei", sans-serif;
+
+            &:hover {
+                text-decoration: underline;
             }
         }
         ul {
@@ -201,7 +210,7 @@ a:focus{
             border: 1px solid #bbb;
             border: 1px solid rgba(0,0,0,0.25);
             font-weight: 400;
-            font-family: 'Source Sans Pro';
+            font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, "Microsoft YaHei", sans-serif;;
             outline: none;
             color: #444;
             font-size: 14px;
@@ -235,7 +244,7 @@ a:focus{
         margin: 0;
         color: $primary-color;
         text-align: left;
-        font: bold 35px/1.1 'Source Sans Pro', 'Helvetica Neue', Arial, 'Hiragino Sans GB', sans-serif;
+        font: bold 35px/1.1 'Source Sans Pro', "Hiragino Sans GB", 'Helvetica Neue', Arial, "Microsoft YaHei", sans-serif;
         font-weight: 700;
         a {
             color: $primary-color;
@@ -303,7 +312,7 @@ a:focus{
         line-height: 1.7;
         color: #444;
         padding-top: 20px;
-        font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+        font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, "Microsoft YaHei", sans-serif;
         text-align: justify;
         h2 {
             margin: 1.4em 0 1.1em;
@@ -324,14 +333,14 @@ a:focus{
                 border: 1px solid #ccc;
                 background: #eee;
             }
-            a {
-                color: #01579f;
-                padding-bottom: 2px;
-                word-break: break-all;
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
+            // a {
+            //     color: #01579f;
+            //     padding-bottom: 2px;
+            //     word-break: break-all;
+            //     &:hover {
+            //         text-decoration: underline;
+            //     }
+            // }
             .caption {
                 color: #444;
                 display: block;
@@ -359,13 +368,21 @@ a:focus{
             ul {
                 margin: 0;
             }
-            a {
-                color: #01579f;
-                padding-bottom: 2px;
-                word-break: break-all;
-                &:hover {
-                    text-decoration: underline;
-                }
+            // a {
+            //     color: #01579f;
+            //     padding-bottom: 2px;
+            //     word-break: break-all;
+            //     &:hover {
+            //         text-decoration: underline;
+            //     }
+            // }
+        }
+        a {
+            color: $primary-color;
+            padding-bottom: 2px;
+            word-break: break-all;
+            &:hover {
+                text-decoration: underline;
             }
         }
     }
@@ -407,7 +424,7 @@ a:focus{
 }
 
 #footer {
-    font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, "Microsoft YaHei", sans-serif;
     padding: .8em 0 3.6em;
     margin-top:1em;
     line-height: 1.5;
@@ -420,7 +437,7 @@ a:focus{
 /* for different pages starts*/
 .post-archive {
     font-size: 18px;
-    font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, "Microsoft YaHei", sans-serif;
     line-height: 2;
     padding-bottom: .8em;
     h2{
@@ -654,7 +671,7 @@ div {
 /* read more*/
 .readmore a {
     font-size: 13px;
-    font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, "Microsoft YaHei", sans-serif;
     color: $primary-color;
     margin-top: -10px;
     margin-bottom: -10px;
@@ -842,7 +859,7 @@ figure.highlight {
     .gutter,
     .code,
     .tag {
-        font-family: Menlo;
+        font-family: $code-font;
         border:      none;
         padding:     0;
         margin:      0;
@@ -887,7 +904,7 @@ figure.highlight {
 .gist {
     .line,
     .line-number {
-        font-family: Menlo;
+        font-family: $code-font;
         font-size:   1em;
         margin:      0 0 5px 0;
     }
@@ -1401,7 +1418,7 @@ i {
     a {
         display: inline-block;
         line-height: 25px;
-        font-family: "TIBch", "Classic Grotesque W01", "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
+        font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
         font-size: 15px;
         color: #555;
         border-bottom: none;

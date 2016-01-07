@@ -22,6 +22,8 @@ html(lang='#{config.language}')
     meta(content='black-translucent', name='apple-mobile-web-app-status-bar-style')
     meta(content='telephone=no', name='format-detection')
     meta(name='description', content=config.description)
+    meta(property="og:image" content=config.url + "/img/fb_og.jpg")
+    meta(property="og:image:width" content="1200")
     block title
     link(rel='stylesheet', type='text/css', href=url_for('css/normalize.css'))
     link(rel='stylesheet', type='text/css', href=url_for('css/pure-min.css'))
@@ -38,7 +40,7 @@ html(lang='#{config.language}')
       .site-name
         h1.hidden= current_title
         a#logo(href=url_for('.'))
-          img(src='/img/logo.png')
+          img(src='/img/logo.png' class='nofancybox')
         p.description= config.subtitle
       #nav-menu
         - for (var i in theme.menu)
@@ -56,11 +58,14 @@ html(lang='#{config.language}')
       a(rel='nofollow', target='_blank', href='https://hexo.io')  Hexo.
       a(rel='nofollow', target='_blank', href='https://github.com/tufu9441/maupassant-hexo')  Original theme
       |  by
-      a(rel='nofollow', target='_blank', href='https://github.com/pagecho')  Cho.
-
-    include _partial/after_footer
+      a(rel='nofollow', target='_blank', href='https://github.com/pagecho')  Cho 
+      |  and 
+      a(rel='nofollow', target='_blank', href="https://github.com/tufu9441") tufu9441.
 
     //- 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/tag.js"></script>
+
+    include _partial/after_footer
+
 
